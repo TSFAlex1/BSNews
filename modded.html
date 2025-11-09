@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modded News</title>
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --text: #fff;
+      --card-bg: #1a1a1a;
+    }
+    [data-theme="light"] {
+      --bg: #f5f5f5;
+      --text: #111;
+      --card-bg: #fff;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #121212;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+    .news-item {
+      background: var(--card-bg);
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .extra-info {
+      margin-top: 10px;
+      background: rgba(255,255,255,0.05);
+      padding: 10px;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #121212;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+    button {
+      background: none;
+      border: 1px solid var(--text);
+      color: var(--text);
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Beat Saber Modded News</h2>
+    <nav>
+      <a href="vanilla.html">Vanilla News</a>
+      <button id="theme-toggle">Toggle Theme</button>
+    </nav>
+  </header>
+  <main>
+    <section id="news">
+      <article class="news-item">
+        <h3>New Mod Loader Released</h3>
+        <p>BSIPA v5.1 adds compatibility with latest Beat Saber version.</p>
+        <div class="extra-info">
+          <strong>Credits:</strong> Modding community contributors and testers.
+        </div>
+      </article>
+      <article class="news-item">
+        <h3>Custom Avatars Expanded</h3>
+        <p>Support for animated avatars and shaders added.</p>
+        <div class="extra-info">
+          <strong>How to Install:</strong> Available via Mod Assistant or manual download.
+        </div>
+      </article>
+    </section>
+  </main>
+  <footer>
+    © 2025 TSFAlex Modded Network
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme');
+      document.documentElement.setAttribute('data-theme', theme === 'light' ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
